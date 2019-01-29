@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Snippet from './Snippet';
 
 class CodeContainer extends Component {
 
@@ -10,16 +11,24 @@ class CodeContainer extends Component {
 		}
 	}
 
+	editSnippet = (newSnip, index) => {
+		const modifiedCmd = this.state.commands.slice();
+		modifiedCmd[index] = newSnip;
+		this.setState({
+			commands: modifiedCmd
+		});
+	}
+
 	render() {
 		const commands = this.state.commands;
 		return (
 			<div>
-				<ul>
+				<div>
 					<h3>{this.state.title}</h3>
-					{commands.map((cmd) =>
-						<li>{cmd}</li>
+					{commands.map((cmd, index) =>
+						<Snippet editHandler={this.editSnippet} index={index} key={cmd} snippetLine={cmd} />
 					)}
-				</ul>
+				</div>
 			</div>
 		);
 	}

@@ -6,6 +6,7 @@ class App extends Component {
 
   render() {
     let gitContainer = {
+      id: 1,
       title: 'Git Commands',
       commands: [
         "git add -a",
@@ -15,6 +16,7 @@ class App extends Component {
     };
 
     let linuxContainer = {
+      id: 2,
       title: 'Linux Commands',
       commands: [
         "cd: change dir",
