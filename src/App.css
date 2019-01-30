@@ -1,0 +1,28 @@
+body {
+    background-color: #293742;
+    color: #EBF1F5;
+}
+
+.body-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    flex: 10%;
+    align-self: center;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1.5rem;    
+}
+
+.container-div {
+    align-self: center;
+    flex: 90%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    
+}

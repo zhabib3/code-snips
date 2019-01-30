@@ -11,8 +11,8 @@ class App extends Component {
       commands: [
         "git add -a",
         "git commit -m 'commit message'",
-        "git remote add origin -:remote-url-here:-"
-      ]    
+        "git remote add origin <remote-url-here>"
+      ]
     };
 
     let linuxContainer = {
@@ -20,16 +20,35 @@ class App extends Component {
       title: 'Linux Commands',
       commands: [
         "cd: change dir",
-        "cp /source file path/ /destination file path/",
-        "ssh -P @localhost 9474"
-      ]    
+        "cp <source file path> <dest file path>",
+        "ssh -P @localhost 9474",
+        "grep -ri <string-to-search>",
+        "man -L ./<man-pg-name>"
+      ]
+    };
+
+    let nodeContainer = {
+      title: 'Node Commands',
+      commands: [
+        "npm start",
+        "npm i --save-dev <pkg-name>",
+        "nodemon <file.js>"
+      ]
     };
 
     return (
       <div className="body-div">
-        <h1>Code Snips</h1>
-        <CodeContainer data={gitContainer} />
-        <CodeContainer data={linuxContainer} />
+        <div className="header">
+          <h1 style={{color: "#fd79a8"}}>Code Snips <i class="fas fa-clipboard-list"></i></h1>
+        </div>
+        <div className="container-div">
+          <CodeContainer data={nodeContainer} />
+          <CodeContainer data={gitContainer} />
+          <CodeContainer data={linuxContainer} />
+
+
+        </div>
+
       </div>
     );
   }

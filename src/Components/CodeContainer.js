@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Snippet from './Snippet';
+import './Styles/CodeContainer.css';
 
 class CodeContainer extends Component {
 
@@ -22,13 +23,14 @@ class CodeContainer extends Component {
 	render() {
 		const commands = this.state.commands;
 		return (
-			<div>
-				<div>
-					<h3>{this.state.title}</h3>
+			<div className="main-container">
+				<h3 className="container-title">{this.state.title}</h3>
+				<div className="container-snippets">
 					{commands.map((cmd, index) =>
 						<Snippet editHandler={this.editSnippet} index={index} key={cmd} snippetLine={cmd} />
 					)}
 				</div>
+
 			</div>
 		);
 	}

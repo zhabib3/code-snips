@@ -1,0 +1,28 @@
+.main-snippet {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-btn {
+    background-color: #293742; 
+    color: #a77e8c; 
+
+    /* Green */
+    border: 2px solid rgb(66, 66, 66);
+    border-radius: 20%;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 4px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 30px;
+}
+
+.edit-btn:hover {
+    background-color: #151c22;
+    color: gray;
+    border-color: #293742;
+  }

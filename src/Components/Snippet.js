@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Styles/Snippet.css'
 
 class Snippet extends Component {
 	constructor(props) {
@@ -40,17 +41,21 @@ class Snippet extends Component {
 	render() {
 		const isEditing = this.state.isEditing;
 		return (
-			<div>
-				<p>- {this.state.snippet}</p>
+			<div className="main-snippet">
+				<p>{this.state.snippet}</p>
+				{/* Render Edit Div if editToggle is true */}
 				{isEditing &&
 				<form className="edit-div">
-					<input type="text" value={this.state.snippet} onChange={this.editSnippet}></input>
+					<input type="text" value={this.state.snippet} onChange={this.editSnippet} ></input>
 					<input type="submit" onClick={this.saveSnippet} value="Submit" />
 					<button type="button" onClick={this.cancelEdit}>Cancel</button>
 
 				</form>
 				}
-				<button type="button" onClick={this.toggleEdit}>Edit</button>
+				{/* Render Edit Button if editToggle is false */}
+				{isEditing || 
+					<button className="edit-btn" type="button" onClick={this.toggleEdit}><i class="far fa-edit"></i></button>
+				}
 			</div>
 		);
 	}
