@@ -6,7 +6,7 @@ body {
 .body-div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .header {
@@ -19,10 +19,10 @@ body {
 .container-div {
     align-self: center;
     flex: 90%;
-    padding: 3%;
+    padding: 1%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    justify-content: center;
     
 }

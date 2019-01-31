@@ -46,6 +46,8 @@ class App extends Component {
           <CodeContainer data={gitContainer} />
           <CodeContainer data={linuxContainer} />
 
+          <CodeContainer data={linuxContainer} />
+          <CodeContainer data={linuxContainer} />
 
         </div>
 

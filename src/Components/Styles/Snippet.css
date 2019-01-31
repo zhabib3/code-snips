@@ -3,12 +3,12 @@
     justify-content: space-between;
 }
 
-.edit-btn {
-    background-color: #293742; 
-    color: #a77e8c; 
-
-    /* Green */
+/* Generic Button Style */
+.btn {
+    color: #a77e8c;
     border: 2px solid rgb(66, 66, 66);
+
+    background-color: #293742;
     border-radius: 20%;
     padding: 6px 6px;
     text-align: center;
@@ -21,8 +21,54 @@
     height: 30px;
 }
 
+.edit-btn {
+    color: #a77e8c;
+    border-color: rgb(66, 66, 66);
+}
+
 .edit-btn:hover {
     background-color: #151c22;
     color: gray;
     border-color: #293742;
-  }
+}
+
+.submit-btn {
+    color: #1abc9c;
+    padding: 0%;
+    height: fit-content;
+    border: none;
+}
+
+.submit-btn:hover {
+    color: #12816b;
+}
+
+.cancel-btn {
+    color: #e74c3c;
+    padding: 0%;
+    height: fit-content;
+    border: none;
+}
+
+.cancel-btn:hover {
+    color: #a13a2f;
+
+}
+
+/* Input Styles */
+input[type=text] {
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #BF8C0A;
+    border-radius: 4px;
+    background-color: #1e252b;
+    color: #fd79a8;
+    font-family: 'B612 Mono', monospace;
+    font-size: 1rem;
+}
+
+.fa-input {
+    font-family: FontAwesome, ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
+}
