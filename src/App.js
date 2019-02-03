@@ -39,14 +39,11 @@ class App extends Component {
     return (
       <div className="body-div">
         <div className="header">
-          <h1 style={{color: "#fd79a8"}}>Code Snips <i class="fas fa-clipboard-list"></i></h1>
+          <h1 style={{color: "#fd79a8"}}>Code Snips <i className="fas fa-clipboard-list"></i></h1>
         </div>
         <div className="container-div">
           <CodeContainer data={nodeContainer} />
           <CodeContainer data={gitContainer} />
-          <CodeContainer data={linuxContainer} />
-
-          <CodeContainer data={linuxContainer} />
           <CodeContainer data={linuxContainer} />
 
         </div>

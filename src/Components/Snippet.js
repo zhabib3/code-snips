@@ -8,7 +8,8 @@ class Snippet extends Component {
 		super(props);
 		this.state = {
 			snippet: this.props.snippetLine,
-			isEditing: false
+			isEditing: false,
+			coppiedSnippet: ''
 		}
 	}
 
@@ -35,8 +36,15 @@ class Snippet extends Component {
 		this.setState({ isEditing: !this.state.isEditing })
 	}
 
-	// Copy Snippet to clipboard
+	// Copy Snippet to clipboard in a ridiculously roundabout way :P
 	copySnippet = () => {
+		const temp = document.createElement('INPUT');
+		const body = document.getElementsByTagName('body')[0];
+		body.appendChild(temp);
+		temp.setAttribute('value', this.state.snippet);
+		temp.select();
+		document.execCommand('copy');
+		body.removeChild(temp);
 
 	}
 
@@ -48,12 +56,19 @@ class Snippet extends Component {
 		return (
 			<div className="main-snippet">
 				{isEditing ||
-					<p>{this.state.snippet}</p>
+					<div id="snippetLine" onClick={this.copySnippet}>
+						{this.state.snippet}
+					</div>
 				}
 				{/* Render Edit Div if editToggle is true */}
 				{isEditing &&
 					<form className="edit-div">
-						<input className="input-snippet" type="text" value={this.state.snippet} onChange={this.editSnippet} ></input>
+						<input
+							className="input-snippet"
+							type="text"
+							value={this.state.snippet}
+							onChange={this.editSnippet}
+						></input>
 						<button className="btn submit-btn" type="submit" onClick={this.saveSnippet}>{submitIcon}</button>
 						<button className="btn cancel-btn" type="button" onClick={this.cancelEdit}>{cancelIcon}</button>
 
@@ -61,7 +76,7 @@ class Snippet extends Component {
 				}
 				{/* Render Edit Button if editToggle is false */}
 				{isEditing ||
-					<button className="btn edit-btn" type="button" onClick={this.toggleEdit}><i class="far fa-edit"></i></button>
+					<button className="btn edit-btn" type="button" onClick={this.toggleEdit}><i className="far fa-edit"></i></button>
 				}
 			</div>
 		);

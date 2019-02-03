@@ -1,6 +1,23 @@
 .main-snippet {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+.main-snippet:hover {
+    background-color: #314858;
+}
+
+#snippetLine {
+    cursor: pointer;
+}
+
+#snippetLine:hover {
+    text-decoration: underline;
 }
 
 /* Generic Button Style */
@@ -45,6 +62,7 @@
 
 .cancel-btn {
     color: #e74c3c;
+    border-radius: 50%;
     padding: 0%;
     height: fit-content;
     border: none;
@@ -67,8 +85,4 @@ input[type=text] {
     color: #fd79a8;
     font-family: 'B612 Mono', monospace;
     font-size: 1rem;
-}
-
-.fa-input {
-    font-family: FontAwesome, ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
 }
