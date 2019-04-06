@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './Styles/Snippet.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import './Styles/Snippet.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckSquare, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 class Snippet extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			snippet: this.props.snippetLine,
-			isEditing: false,
+			isEditing: this.props.isEditing,
 			coppiedSnippet: ''
 		}
 	}
@@ -48,8 +48,18 @@ class Snippet extends Component {
 
 	}
 
+	componentDidMount = () => {
+		if (this.state.snippet.length === 0) {
+			console.log(this.state.snippet.length);
+			this.setState({
+				isEditing: true
+			});
+		}
+	}
+
 
 	render() {
+
 		const isEditing = this.state.isEditing;
 		const submitIcon = <FontAwesomeIcon icon={faCheckSquare} size="2x" />
 		const cancelIcon = <FontAwesomeIcon icon={faTimesCircle} size="2x" />

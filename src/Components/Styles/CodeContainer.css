@@ -10,11 +10,24 @@
 }
 
 .container-title {
-    background-color: #BF8C0A;
+    /* background-color: #BF8C0A;
     margin: 0;
     padding: 0.5rem;
     font-family: 'B612 Mono', monospace;
-    font-size: 1.3rem;
+    font-size: 1.3rem; */
+}
+
+.container-header {
+    background-color: #BF8C0A;
+    margin: 0;
+    max-height: 30px;
+    padding: 0.5rem;
+    font-family: 'B612 Mono', monospace;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container-snippets {
@@ -25,4 +38,29 @@
 
     font-family: 'Roboto Mono', monospace;
 
+}
+
+
+
+/* Generic Button Style */
+.add-btn {
+    color: rgb(250, 224, 159); 
+    border: 2px solid rgb(238, 173, 8);
+    background-color: #BF8C0A;
+    border-radius: 0%;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 4px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    /* height: 30px; */
+}
+
+.add-btn:hover {
+    background-color: rgb(231, 167, 5);
+    color: whitesmoke;
+    border-color: #293742;
 }
